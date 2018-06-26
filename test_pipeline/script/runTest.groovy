@@ -5,8 +5,8 @@ node {
         echo "env.MULTIPLE_IMAGES: ${env.MULTIPLE_IMAGES}"
         env1 = env.ARTIFACT_VERSION
         env2 = env.MULTIPLE_IMAGES
-        withEnv(["env1=$env1",
-        "env2=$env2"]) {
+        withEnv(["env1=$env.ARTIFACT_VERSION",
+        "env2=$env.MULTIPLE_IMAGES"]) {
             sh "echo env1: ${env1}, env2: ${env2} >> /tmp/log"
         }
     }
