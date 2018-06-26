@@ -10,4 +10,7 @@ node {
             sh "echo env1: ${env1}, env2: ${env2} >> /tmp/log"
         }
     }
+    stage('Stage 2') {
+	echo "Stage 2"
+    }
 }
