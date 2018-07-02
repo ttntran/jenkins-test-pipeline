@@ -10,8 +10,8 @@ node {
 	        withEnv(["env1=$env.ARTIFACT_VERSION",
 	        "env2=$env.MULTIPLE_IMAGES",
                 "A=$a"]) {
-	            sh '''echo env1: ${env1}, env2: ${env2} >> /tmp/log
-                          echo $A
+	            sh '''echo "env1: ${env1}, env2: ${env2}"
+                          echo ">>>>>>>$A<<<<<"
                     '''
 	        }
 	    }
