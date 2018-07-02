@@ -1,3 +1,8 @@
+def funcA(option) {
+	withEnv([OPTION=$option]) {
+		sh "echo $OPTION" >> /tmp/log
+	}
+}
 node {
     a = "$HOME/a"
     parallel singleImage: {
@@ -16,6 +21,7 @@ node {
         }, multipleImage: {
 	    stage('Stage 2') {
 		echo "Stage 2"
+                funcA($a)
 	    }
         }
  }
