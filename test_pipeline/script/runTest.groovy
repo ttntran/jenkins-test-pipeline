@@ -11,11 +11,11 @@ node {
     def b = "$HOME/b"
     parallel singleImage: {
         stage('Stage 1') {
-                funcA(b)
+                funcA("hello")
 	    }
         }, multipleImage: {
 	    stage('Stage 2') {
-                funcA(a)
+                funcA("world")
 	    }
         }
  }
