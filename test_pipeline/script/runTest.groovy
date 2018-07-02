@@ -1,7 +1,7 @@
-import jenkins.model.Jenkins
 
 def funcA(option) {
-	withEnv([OPTION=$option]) {
+        temp = "$option"
+	withEnv([OPTION=$temp]) {
 		sh "echo $OPTION >> /tmp/log"
 	}
 }
