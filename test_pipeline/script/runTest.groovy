@@ -1,6 +1,6 @@
 def funcA(option) {
 	withEnv([OPTION=$option]) {
-		sh "echo $OPTION" >> /tmp/log
+		sh "echo $OPTION >> /tmp/log"
 	}
 }
 node {
@@ -21,7 +21,7 @@ node {
         }, multipleImage: {
 	    stage('Stage 2') {
 		echo "Stage 2"
-                funcA($a)
+                funcA(a)
 	    }
         }
  }
