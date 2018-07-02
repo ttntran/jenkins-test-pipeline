@@ -1,7 +1,6 @@
 
 def funcA(option) {
-	temp: option
-	withEnv([OPTION=$temp]) {
+	withEnv([OPTION=$option]) {
 		sh "echo $OPTION >> /tmp/log"
 	}
 }
