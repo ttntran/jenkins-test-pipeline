@@ -1,5 +1,5 @@
 node {
-    a="$HOME/a"
+    a = "$HOME/a"
     parallel singleImage: {
         stage('Stage 1') {
 	        echo 'Hello World: ${env.AR}'
@@ -10,9 +10,7 @@ node {
 	        withEnv(["env1=$env.ARTIFACT_VERSION",
 	        "env2=$env.MULTIPLE_IMAGES",
                 "A=$a"]) {
-	            sh '''echo "env1: ${env1}, env2: ${env2}"
-                          echo ">>>>>>>$A<<<<<"
-                    '''
+	            sh "echo env1: ${env1}, env2: ${env2}, a: ${A} >> /tmp/log"
 	        }
 	    }
         }, multipleImage: {
