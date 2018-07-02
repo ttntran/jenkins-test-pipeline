@@ -1,10 +1,14 @@
 
 def funcA(option) {
-        temp = "$option"
-	withEnv([OPTION=$temp]) {
-		sh "echo $OPTION >> /tmp/log"
-	}
+	step ([
+		$class: 'Copy Artifact',
+		temp: option,
+		withEnv([OPTION=$temp]) {
+			sh "echo $OPTION >> /tmp/log"
+		}
+	]);
 }
+
 node {
     def a = "$HOME/a"
     def b = "$HOME/b"
