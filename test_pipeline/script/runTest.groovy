@@ -1,12 +1,9 @@
 
 def funcA(option) {
-	step ([
-		$class: 'Copy Artifact',
-		temp: option,
-		withEnv([OPTION=$temp]) {
-			sh "echo $OPTION >> /tmp/log"
-		}
-	]);
+	temp: option
+	withEnv([OPTION=$temp]) {
+		sh "echo $OPTION >> /tmp/log"
+	}
 }
 
 node {
