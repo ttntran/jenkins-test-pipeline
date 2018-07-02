@@ -1,11 +1,11 @@
+def a = "$HOME/a"
+def b = "$HOME/b"
 def funcA(option) {
 	withEnv([OPTION=$option]) {
 		sh "echo $OPTION >> /tmp/log"
 	}
 }
 node {
-    a = "$HOME/a"
-    b = "$HOME/b"
     parallel singleImage: {
         stage('Stage 1') {
                 funcA(b)
