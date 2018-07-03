@@ -15,8 +15,8 @@ node {
 
 def funcA(String option) {
 	println ">>>>>>>$option<<<<<<<<`"
-//        withEnv([OPTION=$option]) {
-//                sh "echo $OPTION >> /tmp/log"
-//	}
+        withEnv([OPTION='a']) {
+                sh "echo $OPTION >> /tmp/log"
+	}
 }
 
