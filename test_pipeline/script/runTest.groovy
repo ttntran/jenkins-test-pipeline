@@ -8,7 +8,7 @@ node {
 	    }
         }, multipleImage: {
 	    stage('Stage 2') {
-                funcA("Hello!!!!!!!@@@")
+                funcA("Hello!!!!!!!@@@##")
 	    }
         }
  }
